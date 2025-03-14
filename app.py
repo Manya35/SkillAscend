@@ -44,5 +44,6 @@ def recommend():
     recommendations = get_recommendations(education, goals)
     return jsonify(recommendations)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ != '__main__':
+    gunicorn_app = app  # Required for Gunicorn
+gunicorn_app.run()  # Required for Gunicorn
